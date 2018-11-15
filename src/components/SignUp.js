@@ -20,6 +20,7 @@ class SignUpForm extends Component {
   } 
   onSubmit = (event) => {
     const {
+      // username,
       email,
       passwordOne,
     } = this.state;
@@ -90,9 +91,9 @@ class SignUpForm extends Component {
 
 const SignUpLink = () =>
   <p>
-    Don't have an account? Do Sign up.
+    Don't have an account? 
     {' '}
-    <Link to={routes.SIGN_UP}>Sign doPasswordUpdate</Link>
+    <Link to={routes.SIGN_UP}>Do Sign up</Link>
   </p>
 
 const INITIAL_STATE = {
