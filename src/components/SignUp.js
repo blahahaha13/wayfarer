@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter, } from 'react-router-dom';
 import * as routes from '../constants/routes';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
 // import { errorPrefix } from '@firebase/util';
 // import {doPasswordUpdate} from '../firebase/auth'
 
@@ -20,7 +20,7 @@ class SignUpForm extends Component {
   } 
   onSubmit = (event) => {
     const {
-      // username,
+      username,
       email,
       passwordOne,
     } = this.state;
@@ -30,8 +30,15 @@ class SignUpForm extends Component {
 
     auth.doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        this.setState({ ...INITIAL_STATE });
-        history.push(routes.HOME);
+        // Creating user in own db as well as firebase
+        db.doCreateUser(authUser.user.uid, username, email)
+          .then(() => {
+            this.setState({ ...INITIAL_STATE });
+            history.push(routes.HOME);
+          })
+          .catch(error => {
+            this.setState(byPropKey('error', error));
+          });
       })
       .catch(error => {
         this.setState(byPropKey('error', error));
