@@ -29,11 +29,11 @@ class Profile extends Component {
 
 const UserList = ({ users }) =>
   <div>
-    <h2>List of Usernames of Users</h2>
+    <h2>List of Users</h2>
     
     {console.log(users)}
     {Object.keys(users).map(key =>
-      <div key={key}>{users[key].username}</div>
+      <div key={key}>{users[key].username} {users[key].email}</div>
     )}
   </div>
 
