@@ -1,4 +1,4 @@
-import { auth, googleProvider, twitterProvider } from '../firebase';
+import { auth, googleProvider, twitterProvider } from '../firebase/firebase';
 import { GET_USER, USER_STATUS } from '../actionTypes';
 
 export function getUser() {

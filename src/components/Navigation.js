@@ -14,6 +14,7 @@ const Navigation = () =>
   
 const NavigationAuth = () =>
   <ul>
+    <li><Link to={routes.NOTE}>Posts</Link></li>
     <li><Link to={routes.LANDING}>Landing</Link></li>
     <li><Link to={routes.HOME}>Home</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>

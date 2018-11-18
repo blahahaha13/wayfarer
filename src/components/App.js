@@ -8,6 +8,7 @@ import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
 import Profile from './Profile';
+import Note from './Note';
 import * as routes from '../constants/routes';
 import withAuthentication from './withAuthentication';
 
@@ -16,6 +17,7 @@ const App = () =>
     <div>
       <Navigation />
       <hr />
+      <Route exact path={routes.NOTE} component={Note} />
       <Route exact path={routes.LANDING} component={LandingPage} />
       <Route exact path={routes.SIGN_UP} component={SignUpPage} />
       <Route exact path={routes.SIGN_IN} component={SignInPage} />

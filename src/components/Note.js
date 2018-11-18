@@ -9,7 +9,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import renderHTML from 'react-render-html';
 
-class App extends Component {
+class Note extends Component {
   constructor(props) {
     super(props);
     // state
@@ -105,8 +105,8 @@ render() {
 			
   <div className="form-group">
   <ReactQuill 
-   modules={App.modules}
-    formats={App.formats}
+   modules={Note.modules}
+    formats={Note.formats}
     value={this.state.body}
     placeholder="Topic" 
     onChange={this.onHandleChange} 
@@ -138,7 +138,7 @@ render() {
     }
 }
 
-App.modules = {
+Note.modules = {
   toolbar: [
     [{ header: '1' }, { header: '2' }, {font:[] }],
     [{ size: [] }],
@@ -150,7 +150,7 @@ App.modules = {
   ]
 
 };
-App.formats = [
+Note.formats = [
   'header', 'font', 'size',
   'bold', 'italic', 'underline', 'strike', 'blockquote',
   'list', 'bullet',
@@ -165,4 +165,4 @@ function mapStateToProps(state, ownProps) {
     };
 }
 
-export default connect(mapStateToProps, { getNotes, saveNote, deleteNote, getUser })(App);
+export default connect(mapStateToProps, { getNotes, saveNote, deleteNote, getUser })(Note);
