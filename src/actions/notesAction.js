@@ -1,5 +1,5 @@
 import { GET_NOTES, NOTES_STATUS } from '../actionTypes';
-import { database } from '../firebase';
+import { database } from '../firebase/firebase';
 
 export function getNotes() {
     return dispatch => {

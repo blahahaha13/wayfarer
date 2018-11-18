@@ -16,7 +16,15 @@ if (!firebase.apps.length){
 
 const db = firebase.database();
 const auth = firebase.auth();
+const database = firebase.database().ref('/notes');
+
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+const twitterProvider = new firebase.auth.TwitterAuthProvider();
+
 export {
   auth,
   db,
+  googleProvider,
+  twitterProvider,
+  database,
 };
