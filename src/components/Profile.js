@@ -29,11 +29,15 @@ class Profile extends Component {
 
 const UserList = ({ users }) =>
   <div>
-    <h2>List of Users</h2>
+  <div style={{ backgroundColor: "#66DAC7", width: "100%", minHeight: "200px"}}></div>
+    {/* { <h1>SignIn</h1> } */}
+    <h1 style={{ padding: "10px 20px", textAlign: "center", color: "Purple  "}}>Profile </h1>
+
+    <h2>List of Usernames of Users</h2>
     
     {console.log(users)}
     {Object.keys(users).map(key =>
-      <div key={key}>{users[key].username} {users[key].email}</div>
+      <div key={key}>{users[key].username}</div>
     )}
   </div>
 
