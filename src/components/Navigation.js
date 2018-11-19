@@ -22,18 +22,18 @@ const NavigationAuth = () =>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
-        <li><Link to={routes.LANDING}>WAYFARER</Link></li>
+          <Link to={routes.LANDING}>WAYFARER</Link>
         </li>
         <li className="nav-item">
-        <li><Link to={routes.NOTE}>Posts</Link></li>
+          <Link to={routes.NOTE}>Posts</Link>
         </li>
       </ul>
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-        <li><Link to={routes.ACCOUNT}>Account</Link></li>
+          <Link to={routes.ACCOUNT}>Account</Link>
         </li>
         <li className="nav-item">
-        <li><SignOutButton /></li>
+          <SignOutButton />
         </li>
       </ul>
     </div>
@@ -56,15 +56,15 @@ const NavigationNonAuth = () =>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
-        <li><Link to={routes.LANDING}>WAYFARER</Link></li>
+          <Link to={routes.LANDING}>WAYFARER</Link>
         </li>
       </ul>
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-        <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+          <Link to={routes.SIGN_IN}>Sign In</Link>
         </li>
         <li className="nav-item">
-        <li><Link to={routes.SIGN_UP}>Sign Up</Link></li>
+          <Link to={routes.SIGN_UP}>Sign Up</Link>
         </li>
       </ul>
     </div>
