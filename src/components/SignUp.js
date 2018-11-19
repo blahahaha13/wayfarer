@@ -6,10 +6,10 @@ import { auth, db } from '../firebase';
 // import {doPasswordUpdate} from '../firebase/auth'
 
 const SignUpPage = ({ history }) =>
-<div>
-  <h1>SignUp</h1>
+  <div>
   <SignUpForm history={history} />
-</div>
+  </div>
+
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
 });
@@ -34,7 +34,7 @@ class SignUpForm extends Component {
         db.doCreateUser(authUser.user.uid, username, email)
           .then(() => {
             this.setState({ ...INITIAL_STATE });
-            history.push(routes.HOME);
+            history.push(routes.LANDING);
           })
           .catch(error => {
             this.setState(byPropKey('error', error));
@@ -62,36 +62,47 @@ class SignUpForm extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={username}
-          onChange={event => this.setState(byPropKey('username', event.target.value))}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={passwordOne}
-          onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
-        { error && <p>{error.message}</p> }
-      </form>
+      <body>
+        <div className="container">
+          <div className="blank-space"></div>
+          <section className="section-vis-wrap">
+            <h2>Sign Up</h2>
+            <div className="mini-blank-space"></div>
+            <form onSubmit={this.onSubmit}>
+              <input
+                value={username}
+                onChange={event => this.setState(byPropKey('username', event.target.value))}
+                type="text"
+                placeholder="Full Name"
+              />
+              <input
+                value={email}
+                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                type="text"
+                placeholder="Email Address"
+              />
+              <input
+                value={passwordOne}
+                onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                type="password"
+                placeholder="Password"
+              />
+              <input
+                value={passwordTwo}
+                onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                type="password"
+                placeholder="Confirm Password"
+              />
+              <button disabled={isInvalid} type="submit">
+                Sign Up
+              </button>
+              { error && <p>{error.message}</p> }
+            </form>
+            <div className="mini-blank-space"></div>
+          </section>
+          <div className="blank-space"></div>
+        </div>
+      </body>
     );
   }
 }

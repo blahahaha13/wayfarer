@@ -11,14 +11,21 @@ const AccountPage = () =>
   <AuthUserContext.Consumer>
     
     {authUser =>
-      <div>
-        <h1>Account: {authUser.email}</h1>
-        <UploadPicture />
-        <AboutMe />
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-        {console.log(authUser)}
-      </div>
+      <body>
+        <div className="container">
+          <div className="blank-space"></div>
+          <section className="section-vis-wrap">
+            <h2>Welcome {authUser.email}</h2>
+            <div className="mini-blank-space"></div>
+            <PasswordForgetForm />
+            <div className="mini-blank-space"></div>
+            <PasswordChangeForm />
+            <div className="mini-blank-space"></div>
+            {console.log(authUser)}
+          </section>
+          <div className="blank-space"></div>
+        </div>
+      </body>
     }
   </AuthUserContext.Consumer>
 
