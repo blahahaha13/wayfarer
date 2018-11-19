@@ -13,19 +13,66 @@ const Navigation = () =>
   </AuthUserContext.Consumer>
   
 const NavigationAuth = () =>
-  <ul>
-    <li><Link to={routes.NOTE}>Posts</Link></li>
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.HOME}>Home</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><Link to={routes.PROFILE}>Profile</Link></li>
-    <li><SignOutButton /></li>
-  </ul>
+
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark-1">
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+        <li><Link to={routes.LANDING}>WAYFARER</Link></li>
+        </li>
+        <li className="nav-item">
+        <li><Link to={routes.NOTE}>Posts</Link></li>
+        </li>
+      </ul>
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+        <li><Link to={routes.ACCOUNT}>Account</Link></li>
+        </li>
+        <li className="nav-item">
+        <li><SignOutButton /></li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  // <ul>
+  //   <li><Link to={routes.NOTE}>Posts</Link></li>
+  //   <li><Link to={routes.LANDING}>Landing</Link></li>
+  //   <li><Link to={routes.ACCOUNT}>Account</Link></li>
+  //   <li><SignOutButton /></li>
+  // </ul>
+
 const NavigationNonAuth = () =>
-  <ul>
-    <li><Link to={routes.LANDING}>Landing</Link></li>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-    <li><Link to={routes.PROFILE}>Profile</Link></li>
-  </ul>
+
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark-1">
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+        <li><Link to={routes.LANDING}>WAYFARER</Link></li>
+        </li>
+      </ul>
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+        <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+        </li>
+        <li className="nav-item">
+        <li><Link to={routes.SIGN_UP}>Sign Up</Link></li>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  // <ul>
+  //   <li><Link to={routes.LANDING}>Landing</Link></li>
+  //   <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+  // </ul>
 
 export default Navigation;

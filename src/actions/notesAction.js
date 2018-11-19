@@ -3,6 +3,13 @@ import { database } from '../firebase/firebase';
 
 export function getNotes() {
     return dispatch => {
+        database.on('value', snapshot => {
+            dispatch({
+                type: GET_NOTES,
+                payload: snapshot.val()
+            });
+
+        });
         // as soon as this function fires show loading to true
         dispatch({
             type: NOTES_STATUS,

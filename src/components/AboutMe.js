@@ -23,7 +23,7 @@ class AboutMe extends Component {
   }
 
   componentWillUnmount = () => {
-		this.userRef.off();
+	this.userRef.off();
 	}
 
   handleClickEdit = () => {

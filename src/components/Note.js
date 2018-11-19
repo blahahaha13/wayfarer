@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { getNotes, saveNote, deleteNote } from '../actions/notesAction';
+import { getNotes, saveNote, deleteNote, editNote } from '../actions/notesAction';
 import NoteCard from './NoteCard';
 import { getUser } from '../actions/userAction';
 import { Link } from 'react-router-dom';
@@ -165,4 +165,4 @@ function mapStateToProps(state, ownProps) {
     };
 }
 
-export default connect(mapStateToProps, { getNotes, saveNote, deleteNote, getUser })(Note);
+export default connect(mapStateToProps, { getNotes, saveNote, deleteNote, editNote, getUser })(Note);
